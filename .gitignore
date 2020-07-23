@@ -1,5 +1,5 @@
 # dependencies
 /server/node_modules
 
-
+# db data
 /server/.env
