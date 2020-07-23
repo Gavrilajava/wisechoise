@@ -2,19 +2,15 @@ const express = require('express')
 const app = express()
 
 const mongoose = require('mongoose')
+require('dotenv/config')
 
+app.get('/', (req, res) => res.send('success!'))
 
+mongoose.connect(
+  process.env.DB_CONNECTION, 
+  { useNewUrlParser: true,  useUnifiedTopology: true }, 
+  () => console.log("connected to db")
+)
 
-app.listen(3000)
+app.listen(4000)
 
-// mongodb+srv://wcUser:<password>@wisechoise.ijjrr.mongodb.net/<dbname>?retryWrites=true&w=majority
-
-
-// const MongoClient = require('mongodb').MongoClient;
-// const uri = "mongodb+srv://wcUser:<password>@wisechoise.ijjrr.mongodb.net/<dbname>?retryWrites=true&w=majority";
-// const client = new MongoClient(uri, { useNewUrlParser: true });
-// client.connect(err => {
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
-//   client.close();
-// });
