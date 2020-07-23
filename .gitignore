@@ -1,2 +1,5 @@
 # dependencies
 /server/node_modules
+
+
+/sercer/.env
